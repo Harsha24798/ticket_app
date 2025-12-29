@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());
   }
 }
 
@@ -48,25 +48,15 @@ class MyHomePage extends StatelessWidget {
               },
             ),
           ],
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  const Color.fromARGB(255, 33, 243, 135),
-                  const Color.fromARGB(255, 126, 176, 39),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-          ),
+          flexibleSpace: Container(decoration: BoxDecoration()),
           title: Text('Pos System'),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: const Color.fromARGB(255, 223, 208, 42),
+          elevation: 20.0,
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.home)),
-              Tab(icon: Icon(Icons.settings)),
-              Tab(icon: Icon(Icons.person)),
+              Tab(icon: Icon(Icons.home), text: 'Home'),
+              Tab(icon: Icon(Icons.settings), text: 'Settings'),
+              Tab(icon: Icon(Icons.person), text: 'Profile'),
             ],
           ),
         ),
