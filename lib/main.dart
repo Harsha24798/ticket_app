@@ -10,17 +10,58 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Ticket App'),
-          backgroundColor: Colors.blueAccent,
+      home: MyHomePage()
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            // Handle menu button press
+          },
         ),
-        body: Center(
-          child: Text(
-            'Ticket APP',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              // Handle search button press
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.notifications),
+            onPressed: () {
+              // Handle notifications button press
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {
+              // Handle notifications button press
+            },
+          ),
+        ],
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [const Color.fromARGB(255, 33, 243, 135), const Color.fromARGB(255, 126, 176, 39)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
         ),
+        title: Text('Ticket App'),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Center(
+        child: Text('Welcome to the Ticket App!'),
       ),
     );
   }
