@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage()
-    );
+    return MaterialApp(home: MyHomePage());
   }
 }
 
@@ -51,17 +50,27 @@ class MyHomePage extends StatelessWidget {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [const Color.fromARGB(255, 33, 243, 135), const Color.fromARGB(255, 126, 176, 39)],
+              colors: [
+                const Color.fromARGB(255, 33, 243, 135),
+                const Color.fromARGB(255, 126, 176, 39),
+              ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
           ),
         ),
-        title: Text('Ticket App'),
+        title: Text('Pos System'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Center(
-        child: Text('Welcome to the Ticket App!'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Welcome to the POS System!', style: TextStyle(fontSize: 20)),
+            SizedBox(height: 20),
+            Image(image: AssetImage('assets/login.jpg'), fit: BoxFit.cover),
+          ],
+        ),
       ),
     );
   }
